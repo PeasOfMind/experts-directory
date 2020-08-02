@@ -28,6 +28,11 @@ class MembersController < ApplicationController
     head(:no_content)
   end
 
+  def search
+    member = Member.find(params[:member_id])
+    @search_path = search_connections(member, params[:keywords])
+  end
+
   def update_param
     params.require(:friend_id)
   end
