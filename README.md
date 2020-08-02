@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Everlywell Challenge Experts Directory Search Tool (JSON API only)
 
-Things you may want to cover:
+To ensure the url shortener functionality works, create an local_env.yml and add `BITLY_ACCESS_TOKEN`
 
-* Ruby version
+Without this token, the app will still run but `short_url` will be `null` for all member entries
 
-* System dependencies
+To get started:
+1. Install specified rails and ruby version
+2. Install & start postgres
+3. `bundle install`
+4. `rails db:create`
+5. `rails server`
 
-* Configuration
+Runs locally at `localhost:3000`
 
-* Database creation
+Try it out!
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| ENDPOINT       | ACTION          | DESCRIPTION                |
+| -------------- | --------------- | -------------------------- |
+| /members       | GET             | Lists all existing members |
+| /members/:id   | GET             | Show single member and info |
+| /members/:id   | POST            | Create a member with name and website |
+| /members/:id   | PATCH           | Update friendship for a member with `friend_id` param |
+| /members/:id/search   | GET           | Find someone in member's network matching `keywords` param in their profile |

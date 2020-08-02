@@ -31,7 +31,7 @@ module MembersHelper
         # recursively check
         updated_path = recursive_search(friend, keywords, search_path + [(friend.id)])
       end
-      
+
       # update search path if we got a match and break from loop
       search_path = updated_path if updated_path.last.is_a? String
       break
